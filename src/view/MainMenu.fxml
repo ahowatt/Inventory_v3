@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -28,12 +29,6 @@
       </HBox>
       <AnchorPane layoutX="386.0" layoutY="56.0" prefHeight="535.0" prefWidth="386.0">
          <children>
-            <TableView layoutX="47.0" layoutY="54.0" prefHeight="226.0" prefWidth="364.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
             <Button fx:id="addProductB" layoutX="210.0" layoutY="303.0" mnemonicParsing="false" onAction="#onAddProductB" text="Add" />
             <Button fx:id="modifyProductB" layoutX="265.0" layoutY="303.0" mnemonicParsing="false" onAction="#onModifyProductB" text="Modify" />
             <Button fx:id="deleteProductB" layoutX="335.0" layoutY="303.0" mnemonicParsing="false" onAction="#onDeleteProductB" text="Delete" />
@@ -45,16 +40,20 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="323.0" layoutX="45.0" layoutY="12.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="377.0" />
             <Button layoutX="360.0" layoutY="363.0" mnemonicParsing="false" text="Exit" />
             <ScrollBar layoutX="49.0" layoutY="261.0" prefWidth="364.0" />
+            <TableView fx:id="productTable" layoutX="47.0" layoutY="54.0" prefHeight="226.0" prefWidth="364.0">
+              <columns>
+                <TableColumn fx:id="productID" prefWidth="73.0" text="Product ID" />
+                <TableColumn fx:id="productName" prefWidth="99.0" text="Product Name" />
+                  <TableColumn fx:id="prodInv" prefWidth="105.0" text="Inventory Level" />
+                  <TableColumn fx:id="prodPrice" prefWidth="86.0" text="Price per Unit" />
+              </columns>
+            </TableView>
+            <TextField layoutX="200.0" layoutY="23.0" />
+            <Button fx:id="searchProdB" layoutX="352.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSearchProdB" text="Search" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="56.0" prefHeight="535.0" prefWidth="377.0">
          <children>
-            <TableView layoutX="9.0" layoutY="51.0" prefHeight="226.0" prefWidth="364.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
             <Button fx:id="addPartB" layoutX="194.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAddPartB" text="Add" />
             <Button fx:id="modifyPartB" layoutX="244.0" layoutY="294.0" mnemonicParsing="false" onAction="#onModifyPartB" text="Modify" />
             <Button fx:id="deletePartB" layoutX="309.0" layoutY="294.0" mnemonicParsing="false" onAction="#onDeletePartB" text="Delete" />
@@ -64,6 +63,16 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <TableView fx:id="partsTable" layoutX="9.0" layoutY="51.0" prefHeight="226.0" prefWidth="364.0">
+              <columns>
+                <TableColumn fx:id="partID" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partName" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="partInv" prefWidth="112.0" text="Inventory Level" />
+                  <TableColumn fx:id="partPrice" prefWidth="101.0" text="Price per Unit" />
+              </columns>
+            </TableView>
+            <TextField layoutX="158.0" layoutY="22.0" />
+            <Button fx:id="searchPartsB" layoutX="317.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSearchPartsB" text="Search" />
          </children>
       </AnchorPane>
    </children>
