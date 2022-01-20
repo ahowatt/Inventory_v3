@@ -3,6 +3,7 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Part;
 import model.Product;
+import model.inhousePart;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,19 +25,29 @@ public class MainMenu<Parts, Products> implements Initializable {
     public Button addProductB;
     public Button modifyProductB;
     public Button deleteProductB;
+    @FXML
     public TableView productTable;
+    @FXML
     public TableColumn productID;
+    @FXML
     public TableColumn productName;
+    @FXML
     public TableColumn prodInv;
+    @FXML
     public TableColumn prodPrice;
     public Button searchProdB;
     public Button addPartB;
     public Button modifyPartB;
     public Button deletePartB;
+    @FXML
     public TableView partsTable;
+    @FXML
     public TableColumn partID;
+    @FXML
     public TableColumn partName;
+    @FXML
     public TableColumn partInv;
+    @FXML
     public TableColumn partPrice;
     public Button searchPartsB;
 
@@ -44,44 +56,64 @@ public class MainMenu<Parts, Products> implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-      partsTable.setItems(parts);
-      productTable.setItems(products);
+        partsTable.setItems(parts);
+        productTable.setItems(products);
 
-      partID.setCellValueFactory(new PropertyValueFactory<>("id"));
-      partName.setCellValueFactory(new PropertyValueFactory<>("name"));
-      partInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
-      partPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        partID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        partInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
+        partPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-      productID.setCellValueFactory(new PropertyValueFactory<>("id"));
-      productName.setCellValueFactory(new PropertyValueFactory<>("name"));
-      prodInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
-      prodPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        productID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        productName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        prodInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
+        prodPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
     }
 
-    public void toAddPart(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/addPart.fxml"));//set up the top hierarchy of the new "page"
+
+    public void onAddProductB(ActionEvent actionEvent) throws IOException {
+        Parent onAddProduct = FXMLLoader.load(getClass().getResource("/view/addProduct.fxml"));//set up the top hierarchy of the new "page"
         Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
         //and then cast it to a stage
-        Scene scene = new Scene(root,850,400);
-        stage.setTitle("Add Parts");
+        Scene scene = new Scene(onAddProduct,850,400);
+        stage.setTitle("Add Product");
         stage.setScene(scene); //pass the created scene to the stage
         stage.show();
     }
 
-    public void onAddProductB(ActionEvent actionEvent) {
-    }
+    public void onModifyProductB(ActionEvent actionEvent) throws IOException {
+        Parent onModifyProduct = FXMLLoader.load(getClass().getResource("/view/modifyProduct.fxml"));//set up the top hierarchy of the new "page"
+        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
+        //and then cast it to a stage
+        Scene scene = new Scene(onModifyProduct,850,400);
+        stage.setTitle("Modify Product");
+        stage.setScene(scene); //pass the created scene to the stage
+        stage.show();
 
-    public void onModifyProductB(ActionEvent actionEvent) {
     }
 
     public void onDeleteProductB(ActionEvent actionEvent) {
     }
 
-    public void onAddPartB(ActionEvent actionEvent) {
+    public void onAddPartB(ActionEvent actionEvent) throws IOException {
+        Parent onAddPart = FXMLLoader.load(getClass().getResource("/view/addPart.fxml"));//set up the top hierarchy of the new "page"
+        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
+        //and then cast it to a stage
+        Scene scene = new Scene(onAddPart,850,400);
+        stage.setTitle("Add Part");
+        stage.setScene(scene); //pass the created scene to the stage
+        stage.show();
     }
 
-    public void onModifyPartB(ActionEvent actionEvent) {
+    public void onModifyPartB(ActionEvent actionEvent) throws IOException {
+        Parent onModifyPart = FXMLLoader.load(getClass().getResource("/view/modifyPart.fxml"));//set up the top hierarchy of the new "page"
+        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
+        //and then cast it to a stage
+        Scene scene = new Scene(onModifyPart,850,400);
+        stage.setTitle("Modify Part");
+        stage.setScene(scene); //pass the created scene to the stage
+        stage.show();
     }
 
     public void onDeletePartB(ActionEvent actionEvent) {
@@ -91,5 +123,9 @@ public class MainMenu<Parts, Products> implements Initializable {
     }
 
     public void onSearchPartsB(ActionEvent actionEvent) {
+    }
+
+    public void onExitB(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

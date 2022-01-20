@@ -16,4 +16,15 @@ public class Inventory {
         allProducts.add(newProduct);
     }
 
+    public static ObservableList<Part> getAllParts(){
+        return allParts;
+    }
+
+    public static ObservableList<Product> getAllProducts(){
+        return allProducts;
+    }
+    /*public static Part lookupPart(int partID){
+
+    }*/
+
 }
