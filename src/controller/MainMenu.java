@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Part;
 import model.Product;
@@ -45,6 +46,16 @@ public class MainMenu<Parts, Products> implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
       partsTable.setItems(parts);
       productTable.setItems(products);
+
+      partID.setCellValueFactory(new PropertyValueFactory<>("id"));
+      partName.setCellValueFactory(new PropertyValueFactory<>("name"));
+      partInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
+      partPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+      productID.setCellValueFactory(new PropertyValueFactory<>("id"));
+      productName.setCellValueFactory(new PropertyValueFactory<>("name"));
+      prodInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
+      prodPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
     }
 
