@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.Inventory;
 import model.Part;
 import model.Product;
 import model.inhousePart;
@@ -21,43 +22,42 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainMenu<Parts, Products> implements Initializable {
+public class MainMenu implements Initializable {
     public Button addProductB;
     public Button modifyProductB;
     public Button deleteProductB;
+    public TableView<Product> productTable;
     @FXML
-    public TableView productTable;
+    public TableColumn<Product, Integer> productID;
     @FXML
-    public TableColumn productID;
+    public TableColumn<Product, String> productName;
     @FXML
-    public TableColumn productName;
+    public TableColumn<Product, Integer> prodInv;
     @FXML
-    public TableColumn prodInv;
-    @FXML
-    public TableColumn prodPrice;
+    public TableColumn<Product, Double> prodPrice;
     public Button searchProdB;
     public Button addPartB;
     public Button modifyPartB;
     public Button deletePartB;
     @FXML
-    public TableView partsTable;
+    public TableView<Part> partsTable;
     @FXML
-    public TableColumn partID;
+    public TableColumn<Part, Integer> partID;
     @FXML
-    public TableColumn partName;
+    public TableColumn<Part, String> partName;
     @FXML
-    public TableColumn partInv;
+    public TableColumn<Part, Integer> partInv;
     @FXML
-    public TableColumn partPrice;
+    public TableColumn<Part, Double> partPrice;
     public Button searchPartsB;
 
-  private ObservableList<Part> parts = FXCollections.observableArrayList();
-  private ObservableList<Product> products = FXCollections.observableArrayList();
+  //private ObservableList<Part> parts = FXCollections.observableArrayList();
+  //private ObservableList<Product> products = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        partsTable.setItems(parts);
-        productTable.setItems(products);
+        partsTable.setItems(Inventory.getAllParts());
+        productTable.setItems(Inventory.getAllProducts());
 
         partID.setCellValueFactory(new PropertyValueFactory<>("id"));
         partName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -76,7 +76,7 @@ public class MainMenu<Parts, Products> implements Initializable {
         Parent onAddProduct = FXMLLoader.load(getClass().getResource("/view/addProduct.fxml"));//set up the top hierarchy of the new "page"
         Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
         //and then cast it to a stage
-        Scene scene = new Scene(onAddProduct,850,400);
+        Scene scene = new Scene(onAddProduct,850,600);
         stage.setTitle("Add Product");
         stage.setScene(scene); //pass the created scene to the stage
         stage.show();
@@ -86,7 +86,7 @@ public class MainMenu<Parts, Products> implements Initializable {
         Parent onModifyProduct = FXMLLoader.load(getClass().getResource("/view/modifyProduct.fxml"));//set up the top hierarchy of the new "page"
         Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
         //and then cast it to a stage
-        Scene scene = new Scene(onModifyProduct,850,400);
+        Scene scene = new Scene(onModifyProduct,850,600);
         stage.setTitle("Modify Product");
         stage.setScene(scene); //pass the created scene to the stage
         stage.show();

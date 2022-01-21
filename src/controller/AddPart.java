@@ -28,7 +28,7 @@ public class AddPart implements Initializable {
         Parent onCancelPart = FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));//set up the top hierarchy of the new "page"
         Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
         //and then cast it to a stage
-        Scene scene = new Scene(onCancelPart,850,400);
+        Scene scene = new Scene(onCancelPart,850,480);
         stage.setTitle("Main Menu");
         stage.setScene(scene); //pass the created scene to the stage
         stage.show();

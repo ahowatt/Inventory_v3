@@ -13,6 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenu">
    <children>
+      <Button fx:id="exitB" layoutX="777.0" layoutY="417.0" mnemonicParsing="false" onAction="#onExitB" text="Exit" />
       <AnchorPane layoutX="14.0" layoutY="56.0" prefHeight="535.0" prefWidth="377.0">
          <children>
             <TableView fx:id="partsTable" layoutX="9.0" layoutY="51.0" prefHeight="226.0" prefWidth="364.0">
@@ -29,7 +30,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="158.0" layoutY="22.0" />
+            <TextField layoutX="158.0" layoutY="22.0" promptText="Search by ID or Name" />
             <Button fx:id="searchPartsB" layoutX="317.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSearchPartsB" text="Search" />
             <Button fx:id="addPartB" layoutX="194.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAddPartB" text="Add" />
             <Button fx:id="deletePartB" layoutX="309.0" layoutY="294.0" mnemonicParsing="false" onAction="#onDeletePartB" text="Delete" />
@@ -64,14 +65,13 @@
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="323.0" layoutX="45.0" layoutY="12.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="377.0" />
-            <TextField layoutX="200.0" layoutY="23.0" />
+            <TextField layoutX="200.0" layoutY="23.0" promptText="Search by ID or Name" />
             <Button fx:id="searchProdB" layoutX="352.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSearchProdB" text="Search" />
             <Button fx:id="addProductB" layoutX="210.0" layoutY="303.0" mnemonicParsing="false" onAction="#onAddProductB" text="Add" />
             <Button fx:id="modifyProductB" layoutX="265.0" layoutY="303.0" mnemonicParsing="false" onAction="#onModifyProductB" text="Modify" />
             <Button fx:id="deleteProductB" layoutX="335.0" layoutY="303.0" mnemonicParsing="false" onAction="#onDeleteProductB" text="Delete" />
          </children>
       </AnchorPane>
-      <Button fx:id="exitB" layoutX="782.0" layoutY="429.0" mnemonicParsing="false" onAction="#onExitB" text="Exit" />
    </children>
    <padding>
       <Insets left="25.0" top="25.0" />
