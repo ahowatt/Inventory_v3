@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Part {
+    private static int nextID = 1;
     private int id;
     private String name;
     private double price;
@@ -8,8 +9,9 @@ public abstract class Part {
     private int min;
     private int max;
 
-    public Part(int id, String name, double price, int inv, int min, int max){
-        this.id = id;
+    public Part(String name, double price, int inv, int min, int max){
+        id = nextID;
+        nextID++;
         this.name = name;
         this.price = price;
         this.inv = inv;

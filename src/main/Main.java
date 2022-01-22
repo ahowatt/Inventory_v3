@@ -19,12 +19,11 @@ public class Main extends Application{
         stage.show();
     }
 
-
     public static void main(String[] args){
         inhousePart tire = new inhousePart(001, "Tire", 15.99, 3,0,10,112);
         inhousePart engine = new inhousePart(002, "Engine", 50.89, 6, 0, 15, 113);
         outsourcePart wings = new outsourcePart(005, "Wings", 72.35, 8, 0, 20, "Wings R Us");
-        Product superBike = new Product(10, "Super Bike", 150.00, 2, 0, 10);
+        Product superBike = new Product("Super Bike", 150.00, 2, 0, 10);
 
         Inventory.addPart(tire);
         Inventory.addPart(engine);

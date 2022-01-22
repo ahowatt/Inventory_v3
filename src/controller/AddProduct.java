@@ -30,16 +30,16 @@ public class AddProduct implements Initializable {
     public Button prodAddPart;
     public Button removeAssocPart;
     public Button saveProd;
-    public Button cancelAddProd;
+    public Button cancelProd;
     public TextField prodID;
-    public TextField addProdName;
-    public TextField addProdInv;
-    public TextField addProdPrice;
-    public TextField addProdMin;
-    public TextField addProdMax;
-    public Button modProdPart;
-    public Button cancelModProd;
+    public TextField prodName;
+    public TextField prodInv;
+    public TextField prodPrice;
+    public TextField prodMin;
+    public TextField prodMax;
     public TableView partsTable;
+    public TableView assocPartsTable;
+    public TextField modProdName;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,6 +49,7 @@ public class AddProduct implements Initializable {
         partName.setCellValueFactory(new PropertyValueFactory<>("name"));
         partInv.setCellValueFactory(new PropertyValueFactory<>("inv"));
         partPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
     }
 
     public void onPartSearch(ActionEvent actionEvent) {
@@ -63,7 +64,7 @@ public class AddProduct implements Initializable {
     public void onSaveProd(ActionEvent actionEvent) {
     }
 
-    public void onCancelAddProd(ActionEvent actionEvent) throws IOException {
+    public void onCancelProd(ActionEvent actionEvent) throws IOException {
             Parent onCancelAddProd = FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));//set up the top hierarchy of the new "page"
             Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
             //and then cast it to a stage
@@ -90,4 +91,5 @@ public class AddProduct implements Initializable {
 
     public void onAddProdMax(ActionEvent actionEvent) {
     }
+
 }

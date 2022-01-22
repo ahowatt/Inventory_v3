@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 
 public class Product {
     private ObservableList<Part> associatedParts;
+    private static int nextID = 1;
     private int id;
     private String name;
     private double price;
@@ -11,9 +12,10 @@ public class Product {
     private int min;
     private int max;
 
-    public Product(int id, String name, double price,
+    public Product(String name, double price,
                    int inv, int min, int max){
-        this.id = id;
+        id = nextID;
+        nextID++;
         this.name = name;
         this.price = price;
         this.inv = inv;
@@ -33,8 +35,8 @@ public class Product {
         this.price = price;
     }
 
-    public void setStock(int stock){
-        this.inv = inv;
+    public void setInv(int inv){
+        this.inv = this.inv;
     }
 
     public void setMin(int min){

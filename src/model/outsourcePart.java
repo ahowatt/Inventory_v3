@@ -4,7 +4,7 @@ public class outsourcePart extends Part{
     private String companyName;
 
     public outsourcePart(int id, String name, double price, int inv, int min, int max,String companyName) {
-        super(id, name, price, inv, min, max);
+        super(name, price, inv, min, max);
         this.companyName = companyName;
     }
 

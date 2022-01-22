@@ -74,8 +74,7 @@ public class MainMenu implements Initializable {
 
     public void onAddProductB(ActionEvent actionEvent) throws IOException {
         Parent onAddProduct = FXMLLoader.load(getClass().getResource("/view/addProduct.fxml"));//set up the top hierarchy of the new "page"
-        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event,
-        //and then cast it to a stage
+        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow(); //set it up as a button action event
         Scene scene = new Scene(onAddProduct,850,600);
         stage.setTitle("Add Product");
         stage.setScene(scene); //pass the created scene to the stage

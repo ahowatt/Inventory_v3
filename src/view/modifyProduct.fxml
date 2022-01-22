@@ -8,45 +8,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProduct">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProduct">
     <children>
-        <TableView fx:id="partsTable" layoutX="352.0" layoutY="65.0" prefHeight="200.0" prefWidth="358.0">
+        <TableView fx:id="partsTable" layoutX="321.0" layoutY="61.0" prefHeight="207.0" prefWidth="368.0">
             <columns>
-                <TableColumn fx:id="partID" prefWidth="51.0" text="Part ID" />
-                <TableColumn fx:id="partName" prefWidth="154.0" text="Part Name" />
-                <TableColumn fx:id="partInv" prefWidth="62.0" text="Inventory " />
-                <TableColumn fx:id="partPrice" prefWidth="90.0" text="Price" />
+                <TableColumn fx:id="partID" prefWidth="52.0" text="Part ID" />
+                <TableColumn prefWidth="125.0" text="Part Name" />
+                <TableColumn prefWidth="107.0" text="Inventory" />
+                <TableColumn prefWidth="83.0" text="Price/Unit" />
             </columns>
         </TableView>
-        <TableView layoutX="352.0" layoutY="311.0" prefHeight="200.0" prefWidth="358.0">
+        <TableView fx:id="assocPartsTable" layoutX="321.0" layoutY="312.0" prefHeight="207.0" prefWidth="368.0">
             <columns>
-                <TableColumn fx:id="assocPartID" prefWidth="46.0" text="Part ID" />
-                <TableColumn fx:id="assocPartName" prefWidth="156.0" text="Part Name" />
-                <TableColumn fx:id="assocPartInv" prefWidth="70.0" text="Inventory" />
-                <TableColumn fx:id="assocPartPrice" prefWidth="95.0" text="Price" />
+                <TableColumn fx:id="assocPartID" prefWidth="52.0" text="Part ID" />
+                <TableColumn fx:id="assocPartName" prefWidth="125.0" text="Part Name" />
+                <TableColumn fx:id="assocPartInv" prefWidth="107.0" text="Inventory" />
+                <TableColumn fx:id="assocPartPrice" prefWidth="83.0" text="Price/Unit" />
             </columns>
         </TableView>
-        <TextField fx:id="partSearch" layoutX="549.0" layoutY="27.0" onAction="#onPartSearch" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
-        <Button fx:id="modProdPart" layoutX="650.0" layoutY="274.0" mnemonicParsing="false" onAction="#onModProdPart" text="Add" />
-        <Button fx:id="removeAssocPart" layoutX="559.0" layoutY="522.0" mnemonicParsing="false" onAction="#onRemoveAssocPart" text="Remove Associated Part" />
-        <Button fx:id="saveProd" layoutX="575.0" layoutY="561.0" mnemonicParsing="false" onAction="#onSaveProd" text="Save" />
-        <Button fx:id="cancelModProd" layoutX="631.0" layoutY="561.0" mnemonicParsing="false" onAction="#onCancelModProd" text="Cancel" />
-        <Label layoutX="38.0" layoutY="26.0" text="Modify Product">
+        <TextField fx:id="partSearch" layoutX="540.0" layoutY="23.0" onAction="#onPartSearch" promptText="Search by ID or Name" />
+        <Button fx:id="prodAddPart" layoutX="637.0" layoutY="275.0" mnemonicParsing="false" onAction="#onProdAddPart" text="Add" />
+        <Button fx:id="removeAssocPart" layoutX="526.0" layoutY="529.0" mnemonicParsing="false" onAction="#onRemoveAssocPart" text="Remove Associated Parts" />
+        <Button fx:id="saveProd" layoutX="540.0" layoutY="561.0" mnemonicParsing="false" onAction="#onSaveProd" text="Save" />
+        <Button fx:id="cancelProd" layoutX="611.0" layoutY="561.0" mnemonicParsing="false" onAction="#onCancelProd" text="Cancel" />
+        <Label layoutX="51.0" layoutY="18.0" text="Modify Product">
             <font>
-                <Font name="System Bold" size="19.0" />
+                <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="modProdID" editable="false" layoutX="108.0" layoutY="91.0" onAction="#onModProdID" promptText="Auto-generated" />
-        <TextField fx:id="modProdName" layoutX="108.0" layoutY="140.0" onAction="#onModProdName" />
-        <TextField fx:id="modProdInv" layoutX="108.0" layoutY="196.0" onAction="#onModProdInv" />
-        <TextField fx:id="modProdPrice" layoutX="108.0" layoutY="253.0" onAction="#onModProdPrice" />
-        <TextField fx:id="modProdMin" layoutX="108.0" layoutY="332.0" onAction="#onModProdMin" prefHeight="25.0" prefWidth="41.0" />
-        <TextField fx:id="modProdMax" layoutX="216.0" layoutY="332.0" onAction="#onModProdMax" prefHeight="25.0" prefWidth="41.0" />
-        <Label layoutX="77.0" layoutY="95.0" text="ID" />
-        <Label layoutX="61.0" layoutY="144.0" text="Name" />
-        <Label layoutX="75.0" layoutY="200.0" text="Inv" />
-        <Label layoutX="67.0" layoutY="257.0" prefHeight="17.0" prefWidth="32.0" text="Price" />
-        <Label layoutX="67.0" layoutY="336.0" prefHeight="17.0" prefWidth="32.0" text="Min" />
-        <Label layoutX="183.0" layoutY="336.0" text="Max" />
+        <Label layoutX="37.0" layoutY="101.0" text="ID" />
+        <TextField fx:id="prodID" editable="false" layoutX="72.0" layoutY="97.0" promptText="Part ID (Auto generated)" />
+        <TextField fx:id="modProdName" layoutX="72.0" layoutY="152.0" />
+        <Label layoutX="23.0" layoutY="156.0" text="Name" />
+        <Label layoutX="12.0" layoutY="208.0" text="Inventory" />
+        <TextField fx:id="modProdInv" layoutX="72.0" layoutY="204.0" prefHeight="25.0" prefWidth="115.0" />
+        <TextField fx:id="modProdPrice" layoutX="72.0" layoutY="265.0" prefHeight="25.0" prefWidth="115.0" />
+        <Label layoutX="24.0" layoutY="269.0" text="Price" />
+        <Label layoutX="28.0" layoutY="329.0" text="Max" />
+        <TextField fx:id="modProdMax" layoutX="72.0" layoutY="325.0" prefHeight="25.0" prefWidth="50.0" />
+        <TextField fx:id="modProdMin" layoutX="196.0" layoutY="325.0" prefHeight="25.0" prefWidth="50.0" />
+        <Label layoutX="158.0" layoutY="329.0" text="Min" />
     </children>
 </AnchorPane>

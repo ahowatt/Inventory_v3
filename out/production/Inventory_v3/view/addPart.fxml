@@ -59,13 +59,13 @@
                         <Insets left="5.0" />
                      </padding>
                   </Label>
-                  <TextField prefHeight="25.0" prefWidth="125.0" GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField fx:id="addPartID" editable="false" onAction="#onAddPartID" prefHeight="25.0" prefWidth="125.0" promptText="Auto-generated" GridPane.columnIndex="1" />
+                  <TextField fx:id="addPartName" onAction="#onAddPartName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="addPartInv" onAction="#onAddPartInv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="addPartPrice" onAction="#onAddPartPrice" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="addPartMax" onAction="#onAddPartMax" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="nameID" onAction="#onNameID" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="addPartMin" onAction="#onAddPartMin" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
