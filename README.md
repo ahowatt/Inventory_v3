@@ -3,4 +3,4 @@
 Basic JavaFX application that allows for creating parts, and adding them to associated products. 
 Products and parts can be created, updated, or removed using the button controls in the GUI. 
 
-FOr WGU Software 1 - C482
+For WGU Software 1 - C482
